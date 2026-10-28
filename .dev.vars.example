@@ -1,0 +1,11 @@
+# Copy to .dev.vars for local development (wrangler pages dev).
+# Never commit real secrets.
+
+# "off" disables Turnstile locally; use "enforced" in production.
+TURNSTILE_MODE=off
+# Server-side only.
+TURNSTILE_SECRET=
+# Public site key, exposed to the client via /api/flags.
+TURNSTILE_SITE_KEY=
+# Salt used to hash IP addresses in rate limits and audit logs.
+PRIVACY_SALT=change-me-to-a-long-random-string

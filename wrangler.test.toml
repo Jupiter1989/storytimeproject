@@ -1,0 +1,16 @@
+# Used only by the Vitest worker pool. Never deployed.
+name = "smart-children-stories-test"
+main = "src/server/worker.ts"
+compatibility_date = "2025-10-01"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "storyproject-test"
+database_id = "00000000-0000-0000-0000-000000000000"
+migrations_dir = "migrations"
+
+[vars]
+ENVIRONMENT = "test"
+TURNSTILE_MODE = "off"
+PASSWORD_ITERATIONS = "1000"
+PRIVACY_SALT = "test-salt-not-for-production"

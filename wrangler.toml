@@ -1,0 +1,16 @@
+name = "smart-children-stories"
+compatibility_date = "2025-10-01"
+pages_build_output_dir = "dist"
+
+# Local development defaults. Secrets are NOT stored here; see .dev.vars.example.
+[vars]
+ENVIRONMENT = "development"
+TURNSTILE_MODE = "off"
+
+[[d1_databases]]
+binding = "DB"
+database_name = "storyproject"
+# Local development uses this stable ID. Replace it with the real one from
+# `wrangler d1 create storyproject` before deploying.
+database_id = "e1c9a4f2-7b3d-4f6a-9c58-2d0e8b1a6f47"
+migrations_dir = "migrations"

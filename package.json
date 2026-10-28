@@ -1,0 +1,29 @@
+{
+  "name": "smart-children-stories",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Bilingual (Arabic/English) children's story platform on Cloudflare Pages, D1 and R2.",
+  "scripts": {
+    "build": "vite build",
+    "typecheck": "tsc -p tsconfig.client.json && tsc -p tsconfig.server.json",
+    "dev": "npm run build && wrangler pages dev dist --persist-to=.wrangler/state --port=8788",
+    "dev:web": "vite",
+    "db:migrate:local": "wrangler d1 migrations apply DB --local --persist-to=.wrangler/state",
+    "db:migrate:remote": "wrangler d1 migrations apply DB --remote",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "deploy": "npm run build && wrangler pages deploy dist"
+  },
+  "dependencies": {
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@cloudflare/vitest-plugin": "^1.4.9",
+    "@cloudflare/workers-types": "^5.20261028.1",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.5",
+    "vitest": "^5.0.5",
+    "wrangler": "^4.154.0"
+  }
+}
